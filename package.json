@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "pretest": "rimraf newman",
-    "test": "newman run JSONPlaceholder.postman_collection.json -e JSONPlaceholder.live_environment.json --reporters cli,htmlextra --reporter-htmlextra-title 'Postman Newman Report - Example' --reporter-htmlextra-export ./newman/report.html"
+    "test:dev": "newman run JSONPlaceholder.postman_collection.json -e JSONPlaceholder.dev_environment.json --reporters cli,htmlextra --reporter-htmlextra-title \"Example Project\"",
+    "test:live": "newman run JSONPlaceholder.postman_collection.json -e JSONPlaceholder.live_environment.json --reporters cli,htmlextra --reporter-htmlextra-title \"Example Project\""
   },
   "repository": {
     "type": "git",
