@@ -1,14 +1,14 @@
 {
-	"id": "bd19def9-4216-46bf-964f-b66ccc4fd504",
-	"name": "live",
-	"values": [
-		{
-			"key": "BASE_URL",
-			"value": "https://jsonplaceholder.typicode.com",
-			"enabled": true
-		}
-	],
-	"_postman_variable_scope": "environment",
-	"_postman_exported_at": "2020-09-17T13:08:33.376Z",
-	"_postman_exported_using": "Postman/7.32.0"
+  "id": "bd19def9-4216-46bf-964f-b66ccc4fd504",
+  "name": "dev",
+  "values": [
+    {
+      "key": "BASE_URL",
+      "value": "https://jsonplaceholder.typicode.com",
+      "enabled": true
+    }
+  ],
+  "_postman_variable_scope": "environment",
+  "_postman_exported_at": "2020-09-17T13:08:33.376Z",
+  "_postman_exported_using": "Postman/7.32.0"
 }

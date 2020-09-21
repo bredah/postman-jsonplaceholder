@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pretest": "rimraf newman",
-    "test:dev": "newman run JSONPlaceholder.postman_collection.json -e JSONPlaceholder.dev_environment.json --reporters cli,htmlextra --reporter-htmlextra-title \"Example Project\"",
-    "test:live": "newman run JSONPlaceholder.postman_collection.json -e JSONPlaceholder.live_environment.json --reporters cli,htmlextra --reporter-htmlextra-title \"Example Project\""
+    "clean": "rimraf newman",
+    "test:dev": "newman run JSONPlaceholder.postman_collection.json -e JSONPlaceholder.dev_environment.json --reporters cli,htmlextra,allure --reporter-htmlextra-title \"Example Project\"",
+    "test:live": "newman run JSONPlaceholder.postman_collection.json -e JSONPlaceholder.live_environment.json --reporters cli,htmlextra,allure --reporter-htmlextra-title \"Example Project\""
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/bredah/postman-jsonplaceholder#readme",
   "devDependencies": {
     "newman": "^5.2.0",
+    "newman-reporter-allure": "^1.0.7",
     "newman-reporter-htmlextra": "^1.19.2",
     "rimraf": "^3.0.2"
   }
