@@ -1,16 +1,13 @@
 # JSONPlaceholder - Postman & Newman
 
-This example contains a collection and environment files, after execution the project generates two reports: HTML Report and Allure Report.
+This example contains a collection and environment files, after execution the project generates the [HTML Report](https://www.npmjs.com/package/newman-reporter-htmlextra).
 
 ## Execution
 
-Run the command below:
+Before running, set the environment variable `APP_ENV` and then run the following command:
 
 ```sh
-# Dev environment
-npm run test:dev
-# Live environment
-npm run test:live
+npm run test
 ```
 
 ## CI
@@ -23,11 +20,11 @@ pipeline {
     parameters{
         choice(name: 'ENVIRONMENT', choices: ['live', 'dev'], description: 'Select the environtment')
     }
+    environment {
+        APP_ENV = "${params.ENVIRONMENT}"
+    }
     options {
         buildDiscarder(logRotator(numToKeepStr: '10'))
-    }
-    environment {
-        BUILD="${currentBuild.number}"
     }
     stages {
         stage('Prepare') {
@@ -38,15 +35,15 @@ pipeline {
         }
         stage('Test') {
             steps {
-                exec("npm run test:${params.ENVIRONMENT}")
+                exec('npm test')
             }
-            post { 
-                always { 
+            post {
+                always {
                     publishHTML (target: [
                         allowMissing: true,
                         alwaysLinkToLastBuild: false,
                         keepAll: true,
-                        reportDir: 'newman',
+                        reportDir: '',
                         reportFiles: 'report.html',
                         reportName: "HTML Report"
                     ])
@@ -64,4 +61,5 @@ def exec(cmd) {
         bat cmd
     }
 }
+
 ```
