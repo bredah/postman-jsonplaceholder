@@ -20,7 +20,7 @@ newman.run(
     iterationCount: 1,
     reporter: {
       htmlextra: {
-        export: "./report.html",
+        export: "./newman/report.html",
         // template: './template.hbs'
         // logs: true,
         // showOnlyFails: true,
