@@ -12,6 +12,10 @@ if (!environment) {
   return;
 }
 
+console.log(
+  `Running the collection in the ${process.env.APP_ENV} environment!`
+);
+
 newman.run(
   {
     collection: "./JSONPlaceholder.collection.json", // Collection URL from a public link or the Postman API can also be used
